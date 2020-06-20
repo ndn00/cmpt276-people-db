@@ -1,0 +1,51 @@
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* grid-gap: 1em; */
+}
+.content-wrapper > div{
+  padding: 1em;
+}
+#display{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-end;
+  align-content: flex-start;
+}
+.blob{
+  display: block;
+  border: 1px solid black;
+}
+.table {
+  display: table;
+  border-spacing: 2px;
+  border: none;
+}
+  
+.thead {
+  display: table-header-group;
+  color: white;
+  font-weight: bold;
+  background-color: grey;
+}
+
+.tbody {
+  display: table-row-group;
+}
+
+.tr {
+  display: table-row;
+  border: none;
+}
+
+.td {
+  display: table-cell;
+  padding: 0.35em;
+}
+
+.tr.editing .td INPUT {
+  width: 100px;
+}
+  

@@ -13,7 +13,7 @@ const getPeople = (req, res) => {
   })
 };
 
-const getPeopleById = (req, res) => {
+const getPersonById = (req, res) => {
   const id = parseInt(req.params.id)
 
   pool.query('SELECT * FROM people WHERE id = $1', [id], (error, results) => {
@@ -24,25 +24,25 @@ const getPeopleById = (req, res) => {
   })
 }
 
-const createPeople = (req, res) => {
-  const { id, name, size, height, type } = req.body
+const createPerson = (req, res) => {
+  const [name, size, height, type] = req.body
 
-  pool.query('INSERT INTO people VALUES ($1, $2, $3, $4, $5)', [id, name, size, height, type]
+  pool.query('INSERT INTO people (name, size, height, type) VALUES ($1, $2, $3, $4)', [name, size, height, type]
     , (error, results) => {
       if (error) {
         throw error;
       }
-      res.status(201).send(`People added with ID: ${result.insertId}`);
+      res.status(201).send(`People added with ID: ${results.insertId}`);
     })
 }
 
-const updatePeople = (req, res) => {
+const updatePerson = (req, res) => {
   const id = parseInt(req.params.id)
-  const { name, email } = req.body
-
+  console.log(req.body);
+  const [name, size, height, type] = req.body
   pool.query(
-    'UPDATE people SET name = $1, email = $2 WHERE id = $3',
-    [name, email, id],
+    'UPDATE people SET name = $1, size = $2, height = $3, type = $4 WHERE id = $5',
+    [name, size, height, type, id],
     (error, results) => {
       if (error) {
         throw error;
@@ -52,7 +52,7 @@ const updatePeople = (req, res) => {
   )
 }
 
-const deletePeople = (req, res) => {
+const deletePerson = (req, res) => {
   const id = parseInt(req.params.id)
 
   pool.query('DELETE FROM people WHERE id = $1', [id], (error, results) => {
@@ -65,8 +65,9 @@ const deletePeople = (req, res) => {
 
 module.exports = {
   getPeople,
-  getPeopleById,
-  createPeople,
-  updatePeople,
-  deletePeople,
+  getPersonById,
+  createPerson,
+  updatePerson,
+  deletePerson,
+  pool,
 }

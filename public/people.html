@@ -1,0 +1,63 @@
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>People</title>
+
+  <!-- Bootstrap core CSS-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Font Awesome -->
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <!-- JQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+  <link id="theme" rel="stylesheet" type="text/css" href="/stylesheets/people.css">
+</head>
+
+<body>
+  <main>
+    <div class="all-wrapper">
+      <h2>People table</h2>
+      <div style="display: table; margin-bottom:20px;">
+        <div class="tr">
+          <input class="td new-input" placeholder="name">
+          <input class="td new-input" placeholder="size">
+          <input class="td new-input" placeholder="height">
+          <input class="td new-input" placeholder="type">
+          <div class="td">
+            <button id="new-button" class="btn btn-dark" onclick="handle_new_button()">New People</button>
+          </div>
+        </div>
+      </div>
+      <div class="content-wrapper">
+        <div>
+          <table class="table table-striped table-bordered" id="tb">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">id</th>
+                <th scope="col">name</th>
+                <th scope="col">size</th>
+                <th scope="col">height</th>
+                <th scope="col">type</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+        <div id="display">
+
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="/scripts/bstable.js"></script>
+  <script src="/scripts/people.js"></script>
+</body>
+
+</html>
