@@ -6,6 +6,9 @@
 .content-wrapper > div{
   padding: 1em;
 }
+.header-wrapper {
+  padding: 1em;
+}
 #display{
   display: flex;
   flex-direction: row;
