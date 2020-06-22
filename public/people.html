@@ -23,14 +23,41 @@
     <div class="all-wrapper">
       <div class="header-wrapper">
         <h2>People table</h2>
-        <div style="display: table; margin-bottom:20px;">
-          <div class="tr">
-            <input class="td new-input" placeholder="name">
-            <input class="td new-input" placeholder="size">
-            <input class="td new-input" placeholder="height">
-            <input class="td new-input" placeholder="type">
-            <div class="td">
-              <button id="new-button" class="btn btn-dark" onclick="handle_new_button()">New People</button>
+        <div>
+          <div style="align-content: start; margin-bottom:20px;">
+            <div>
+              <h4>Add a Person</h4>
+              <input class="new-input" placeholder="name">
+              <input class="new-input" placeholder="size">
+              <input class="new-input" placeholder="height">
+              <input class="new-input" placeholder="type">
+              <button id="new-button" class="btn btn-dark" onclick="handle_new_button()">New Person</button>
+            </div>
+            <div>
+              <h4>Filter Data</h4>
+              <input class="filter-input" placeholder="name">
+              <input class="filter-input" placeholder="size">
+              <input class="filter-input" placeholder="height">
+              <input class="filter-input" placeholder="type">
+              <button id="filter-button" class="btn btn-dark" onclick="handle_filter_button()">Filter</button>
+              <button id="filter-reset-button" class="btn btn-dark"
+                onclick="handle_filter_reset_button()">Reset</button>
+              <p>Fields left empty are not used for query, query with multiple fields uses AND relation</p>
+            </div>
+            <div>
+              <h4>Sort Data</h4>
+              <select name="sort" id="sort-col-select">
+                <option value="id">id</option>
+                <option value="name">name</option>
+                <option value="size">size</option>
+                <option value="height">height</option>
+                <option value="type">type</option>
+              </select>
+              <select name="order" id="sort-order-select">
+                <option value="ASC">ascending</option>
+                <option value="DESC">descending</option>
+              </select>
+              <button id="sort-button" class="btn btn-dark" onclick="handle_sort_button()">Sort</button>
             </div>
           </div>
         </div>

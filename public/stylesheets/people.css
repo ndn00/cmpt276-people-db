@@ -8,6 +8,9 @@
 }
 .header-wrapper {
   padding: 1em;
+  display: grid;
+  grid-gap: 1em;
+  grid-auto-rows: min(100px,auto);
 }
 #display{
   display: flex;
@@ -20,6 +23,8 @@
 .blob{
   display: block;
   border: 1px solid black;
+  text-align: center;
+  margin: 4px;
 }
 .table {
   display: table;
