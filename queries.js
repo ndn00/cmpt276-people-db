@@ -1,8 +1,8 @@
 const { Pool } = require('pg');
 const { type } = require('jquery');
 const pool = new Pool({
-  // connectionString: process.env.DATABASE_URL,
-  connectionString: 'postgres://postgres:billduy007@localhost/assn2',
+  connectionString: process.env.DATABASE_URL,
+  // connectionString: 'postgres://postgres:billduy007@localhost/assn2',
 });
 
 var currentSelect = "";
